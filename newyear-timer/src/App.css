@@ -1,38 +1,57 @@
-.App {
-  text-align: center;
+html {
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #66178b 0%, #26a585fd 100%);
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: transparent;
+  color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.countdown-wrapper {
+  max-width: 800px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 40px 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.countdown-box {
+  background-color: #0f0564;
+  font-size: 50px;
+  font-weight: 700;
+  color: #cdee11;
+  border-radius: 15px;
+  width: 160px;
+  height: 160px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.legend {
+  font-size: 40px;
+  font-style: italic;
+  color: #95ca1a;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.wish-message {
+  font-size: 45px;
+  font-weight: 700;
+  color: rgb(148, 14, 36);
+}
+.header {
+  font-size: 45px;
+  font-weight: 700;
+  color: rgb(148, 14, 126);
+}
+.newyear {
+  font-size: 25px;
+  font-weight: 600;
+  color: #770b0b;
+}
+.credits {
+  margin-top: 15px;
 }

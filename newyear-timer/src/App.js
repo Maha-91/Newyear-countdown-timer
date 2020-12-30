@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-10-1`) - +new Date();
+    const difference = +new Date(`01/01/${year + 1}`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
@@ -27,7 +27,6 @@ function App() {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
   });
-
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach((interval) => {
@@ -43,11 +42,34 @@ function App() {
   });
   return (
     <div>
-      <h1>HacktoberFest {year} Countdown</h1>
-      <h2>With React Hooks!</h2>
-      {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+      <h1 id="header" class="header">
+        New Year {year + 1} Countdown
+      </h1>
+      <h2 class="newyear">With React Hooks!</h2>
+      {timerComponents.length ? (
+        timerComponents
+      ) : (
+        <span class="wish-message">💥 Happy NewYear 2021 ! 💥🎄🎊</span>
+      )}
+      <div className="countdown-wrapper">
+        <div className="countdown-box">
+          {timeLeft.days}
+          <span className="legend">Days</span>
+        </div>
+        <div className="countdown-box">
+          {timeLeft.hours}
+          <span className="legend">Hours</span>
+        </div>
+        <div className="countdown-box">
+          {timeLeft.minutes}
+          <span className="legend">Minutes</span>
+        </div>
+        <div className="countdown-box">
+          {timeLeft.seconds}
+          <span className="legend">Seconds</span>
+        </div>
+      </div>
     </div>
   );
 }
-
 export default App;
